@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kafka-topic-auditor"
+version = "0.1.0"
+description = "Audit Kafka topics for risky replication and durability settings."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Narayana Vemburaj" }]
+keywords = ["kafka", "topics", "audit", "replication"]
+dependencies = []
+
+[project.optional-dependencies]
+live = ["confluent-kafka>=2.3"]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/narayana006/kafka-topic-auditor"
+
+[project.scripts]
+kafka-topic-auditor = "kafka_topic_auditor.cli:main"
+
+[tool.setuptools]
+packages = ["kafka_topic_auditor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
