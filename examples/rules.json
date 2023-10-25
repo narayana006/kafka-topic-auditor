@@ -1,0 +1,24 @@
+{
+  "min_rf": 3,
+  "min_isr": 2,
+  "skew_pct": 25,
+  "exclude_topics": [
+    "__*"
+  ],
+  "disable": [
+    "not-preferred-leader"
+  ],
+  "severity": {
+    "rf-below-minimum": "critical"
+  },
+  "overrides": [
+    {
+      "topics": [
+        "clickstream",
+        "logs.*"
+      ],
+      "min_rf": 2,
+      "min_isr": 1
+    }
+  ]
+}
